@@ -10,6 +10,7 @@ namespace GuessMyNumber
             int number = rnd.Next(1, 99999);
             /* int number = 1; */
             int answer = 0;
+            Console.WriteLine("Press \"CTRL + C\" or close the window to exit.");
             while(number != answer)
             {
                 start:
@@ -38,8 +39,12 @@ namespace GuessMyNumber
                 if (number == answer)
                 {
                     Console.WriteLine("You did it!");
-                    Console.WriteLine("Start me again if you want to play!");
-                    System.Environment.Exit(0);
+                    Console.WriteLine("Press \"CTRL + C\" or close the window to exit.");
+                    number = rnd.Next(1, 99999);
+                    answer = 0;
+                    goto start;
+/*                     Console.WriteLine("Start me again if you want to play!"); */
+                    
                     /* playAgain:
                     Console.Write("Play again [y/n]? ");
                     string playAgain = Console.ReadLine();
