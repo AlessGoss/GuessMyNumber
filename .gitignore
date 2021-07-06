@@ -1,12 +1,3 @@
-# Building with Visual Studio Code
-.vscode/
-
-# Output program
-Release/
-
-# Solution cleaner
-Clean.bat
-
 # .NET Build folders
 bin/
 obj/
