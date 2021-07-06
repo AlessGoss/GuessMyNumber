@@ -1,5 +1,7 @@
 @echo off
 title Cleaning up...
+choice /m "Do you want to move the publish folder to the root?"
+if %ERRORLEVEL%==1 (
 if exist "bin\Debug\net5.0\win-x86\publish" (
 if exist "Release" (del /f /s /q Release & rd /s /q Release)
 cd "bin\Debug\net5.0\win-x86"
@@ -9,6 +11,9 @@ cd "Release"
 del /f /q "*.pdb"
 cd ".."
 )
+)
+choice /m "Do you want to delete bin and obj?"
+if %ERRORLEVEL%==1 (
 if exist "bin" (
 del /f /s /q bin
 rd /s /q bin
@@ -17,7 +22,8 @@ if exist "obj" (
 del /f /s /q obj
 rd /s /q obj
 )
-choice /m "Zip Release folder "
+)
+choice /m "Do you want to zip the Release folder "
 if %ERRORLEVEL%==1 (
 title Zipping Release...
 ren "Release" "GuessMyNumber"
