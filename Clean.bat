@@ -5,6 +5,9 @@ if exist "Release" (del /f /s /q Release & rd /s /q Release)
 cd "bin\Debug\net5.0\win-x86"
 move /Y "publish" "..\..\..\..\Release"
 cd "..\..\..\..\"
+cd "Release"
+del /f /q "*.pdb"
+cd ".."
 )
 del /f /s /q bin
 rd /s /q bin
